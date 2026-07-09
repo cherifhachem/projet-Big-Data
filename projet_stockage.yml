@@ -1,0 +1,21 @@
+python -c "import pyspark; print(pyspark.__version__)"name: projet_stockage
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+
+  # --- Librairies indispensables ---
+  - numpy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - pyyaml
+  - openpyxl
+
+  - pip
+  - pip:
+      - logging-config

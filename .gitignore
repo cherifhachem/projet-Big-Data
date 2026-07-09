@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environnements
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+
+# Spark
+spark-warehouse/
+metastore_db/
+
+# Fichiers temporaires
+*.log
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Résultats générés
+results/figures/
+results/*.csv
+
+# Données générées
+data/snim/
+data/somelec/
+
+# Fichiers de test
+test_csv/
+test_spark.py
+test_write.py
+data/*.csv
+# Résultats Parquet générés
+results/parquet/
+
+# Fichiers Spark
+_SUCCESS
+*.crc
+results/*.csv
