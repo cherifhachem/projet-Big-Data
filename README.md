@@ -49,7 +49,69 @@ Spark 4.1.2
 ---
 
 # 4. Structure du projet
-
+projet_stockage/
+│
+├── README.md                         # Documentation du projet
+├── requirements.txt                  # Dépendances Python (pip)
+├── projet_stockage.yml               # Environnement Conda reproductible
+├── main.py                           # Point d'entrée principal du projet
+├── run_project.bat                   # Exécution du projet en un clic (Windows)
+├── .gitignore                        # Fichiers exclus de Git
+│
+├── config/                           # Configuration du projet
+│   ├── __init__.py
+│   └── config.py                     # Chemins et paramètres
+│
+├── data/                             # Données d'entrée
+│   ├── snim_logs.csv                 # Logs maintenance SNIM
+│   └── somelec_releves.csv           # Relevés consommation SOMELEC
+│
+├── scripts/                          # Scripts Spark/Python
+│   ├── __init__.py
+│   │
+│   ├── generate_dataset.py           # Génération des jeux de données
+│   ├── ingest.py                     # Chargement des données
+│   ├── convert.py                    # Conversion CSV → Parquet
+│   │
+│   ├── benchmark.py                  # Benchmark général
+│   ├── benchmark_full.py             # Benchmark complet
+│   ├── benchmark_read.py             # Temps de lecture
+│   ├── benchmark_size.py             # Analyse taille stockage
+│   ├── column_benchmark.py           # Test lecture colonne spécifique
+│   │
+│   ├── size_analysis.py              # Analyse compression
+│   ├── skew_analysis.py              # Analyse déséquilibre partitions
+│   ├── explain_plan.py               # Plan d'exécution Spark
+│   │
+│   ├── plots.py                      # Génération graphiques
+│   └── plot_results.py               # Visualisation résultats
+│
+├── results/                          # Résultats expérimentaux
+│   │
+│   ├── compression_results.csv       # Résultats compression
+│   ├── read_benchmark.csv            # Temps lecture
+│   ├── column_benchmark.csv          # Benchmark colonne
+│   │
+│   ├── figures/                      # Graphiques générés
+│   │   ├── snim_logs_storage.png
+│   │   ├── somelec_releves_storage.png
+│   │   └── ...
+│   │
+│   └── parquet/                      # Données converties
+│       │
+│       ├── snim_logs/
+│       │   ├── snappy/
+│       │   ├── gzip/
+│       │   └── uncompressed/
+│       │
+│       └── somelec_releves/
+│           ├── snappy/
+│           ├── gzip/
+│           └── uncompressed/
+│
+└── tests/                            # Tests
+    ├── test_spark.py
+    └── test_write.py
 ---
 
 # 5. Installation
