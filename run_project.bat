@@ -1,30 +1,17 @@
 @echo off
 
-echo ======================================
-echo   PROJET STOCKAGE BIG DATA
-echo ======================================
+call conda activate projet-stockage
 
-echo.
-echo Activation environnement Conda...
+set JAVA_HOME=C:\Program Files\Eclipse Adoptium\jdk-17.0.19.10-hotspot
 
-call C:\Users\Hachem\miniconda3\Scripts\activate.bat projet-stockage
+set HADOOP_HOME=C:\hadoop
 
+set PATH=%PATH%;C:\hadoop\bin
 
-echo.
-echo Verification Python...
+set PYSPARK_PYTHON=python
+set PYSPARK_DRIVER_PYTHON=python
 
-python --version
-
-
-echo.
-echo Lancement du projet...
 
 python main.py
-
-
-echo.
-echo ======================================
-echo Projet termine
-echo ======================================
 
 pause

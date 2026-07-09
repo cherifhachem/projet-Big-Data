@@ -42,3 +42,21 @@ results/parquet/
 _SUCCESS
 *.crc
 results/*.csv
+
+# Python
+__pycache__/
+*.pyc
+
+# Conda
+.env/
+
+# Spark outputs
+results/parquet/
+results/figures/
+
+# IDE
+.idea/
+
+# Temporary Spark files
+*.crc
+_SUCCESS
