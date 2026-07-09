@@ -48,57 +48,56 @@ Spark 4.1.2
 
 ---
 
-# 4. Structure du projet
+## 4. Structure du projet
+
+```text
 projet_stockage/
 │
-├── README.md                         # Documentation du projet
-├── requirements.txt                  # Dépendances Python (pip)
-├── projet_stockage.yml               # Environnement Conda reproductible
-├── main.py                           # Point d'entrée principal du projet
-├── run_project.bat                   # Exécution du projet en un clic (Windows)
-├── .gitignore                        # Fichiers exclus de Git
+├── README.md
+├── requirements.txt
+├── projet_stockage.yml
+├── main.py
+├── run_project.bat
+├── .gitignore
 │
-├── config/                           # Configuration du projet
+├── config/
 │   ├── __init__.py
-│   └── config.py                     # Chemins et paramètres
+│   └── config.py
 │
-├── data/                             # Données d'entrée
-│   ├── snim_logs.csv                 # Logs maintenance SNIM
-│   └── somelec_releves.csv           # Relevés consommation SOMELEC
+├── data/
+│   ├── snim_logs.csv
+│   └── somelec_releves.csv
 │
-├── scripts/                          # Scripts Spark/Python
+├── scripts/
 │   ├── __init__.py
 │   │
-│   ├── generate_dataset.py           # Génération des jeux de données
-│   ├── ingest.py                     # Chargement des données
-│   ├── convert.py                    # Conversion CSV → Parquet
+│   ├── generate_dataset.py
+│   ├── ingest.py
+│   ├── convert.py
 │   │
-│   ├── benchmark.py                  # Benchmark général
-│   ├── benchmark_full.py             # Benchmark complet
-│   ├── benchmark_read.py             # Temps de lecture
-│   ├── benchmark_size.py             # Analyse taille stockage
-│   ├── column_benchmark.py           # Test lecture colonne spécifique
+│   ├── benchmark.py
+│   ├── benchmark_full.py
+│   ├── benchmark_read.py
+│   ├── benchmark_size.py
+│   ├── column_benchmark.py
 │   │
-│   ├── size_analysis.py              # Analyse compression
-│   ├── skew_analysis.py              # Analyse déséquilibre partitions
-│   ├── explain_plan.py               # Plan d'exécution Spark
+│   ├── size_analysis.py
+│   ├── skew_analysis.py
+│   ├── explain_plan.py
 │   │
-│   ├── plots.py                      # Génération graphiques
-│   └── plot_results.py               # Visualisation résultats
+│   ├── plots.py
+│   └── plot_results.py
 │
-├── results/                          # Résultats expérimentaux
+├── results/
+│   ├── compression_results.csv
+│   ├── read_benchmark.csv
+│   ├── column_benchmark.csv
 │   │
-│   ├── compression_results.csv       # Résultats compression
-│   ├── read_benchmark.csv            # Temps lecture
-│   ├── column_benchmark.csv          # Benchmark colonne
-│   │
-│   ├── figures/                      # Graphiques générés
+│   ├── figures/
 │   │   ├── snim_logs_storage.png
-│   │   ├── somelec_releves_storage.png
-│   │   └── ...
+│   │   └── somelec_releves_storage.png
 │   │
-│   └── parquet/                      # Données converties
-│       │
+│   └── parquet/
 │       ├── snim_logs/
 │       │   ├── snappy/
 │       │   ├── gzip/
@@ -109,9 +108,10 @@ projet_stockage/
 │           ├── gzip/
 │           └── uncompressed/
 │
-└── tests/                            # Tests
+└── tests/
     ├── test_spark.py
     └── test_write.py
+```
 ---
 
 # 5. Installation
