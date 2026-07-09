@@ -168,3 +168,8 @@ environ 4.3 fois plus rapide
 
 df.filter(...).select(...).explain(True)
 
+
+Après enregistrement, faites :
+
+```powershell
+type README.md
